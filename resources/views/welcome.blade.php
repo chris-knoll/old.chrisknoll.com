@@ -85,7 +85,7 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://forge.laravel.com">Linux</a>
+                    <a href="{{ route('linux') }}">Linux</a>
                     <a href="https://github.com/chris-knoll">GitHub</a>
                 </div>
             </div>
