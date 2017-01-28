@@ -10,4 +10,9 @@ class LinuxController extends Controller
     {
     	return view('linux.index');
     }
+
+    public function midterm()
+    {
+    	return view('linux.midterm');
+    }
 }

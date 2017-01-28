@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/linux', 'LinuxController@index')->name('linux');
+Route::get('/linux/midterm', 'LinuxController@midterm')->name('linux-midterm');
+
+
