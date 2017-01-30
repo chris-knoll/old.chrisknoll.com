@@ -197,6 +197,7 @@
 	</tbody>
 </table>
 
+<p><strong>Quiz</strong></p> 
 <ul>
 	<li>The PATH environment variable is used for: Specifying directories to search for executable files</li>
 	<li>Which of the following will create a variable?: <code>VAR=value</code></li>

@@ -62,6 +62,7 @@
 	</tbody>
 </table>
 
+<p><strong>Quiz</strong></p> 
 <ul>
 	<li>If you want to see the entire contents of a text file, you can use the _____ command: <code>cat</code></li>
 	<li>The <code>head -n -1 readme.txt</code> command will: Display all but the last line of readme.txt</li>

@@ -151,6 +151,7 @@
 	</tbody>
 </table>
 
+<p><strong>Quiz</strong></p> 
 <ul>
 	<li>Which command is used in order to view the manual page for a topic?: <code>man</code></li>
 	<li>Which of the following man page sections will provide an example of how a command is executed?: The SYNOPSIS section</li>
