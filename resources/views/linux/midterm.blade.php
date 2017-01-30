@@ -26,7 +26,7 @@
 	            	right:0;
             	}
             }
-            
+
             #linux-commands {
             	height:100%;
             	background:tan;
@@ -54,291 +54,16 @@
 	<h1>Midterm Study Notes (Ch 1 - 14)</h1>
 
 <div class="col-sm-3" id="linux-commands">
-	<h3>Commands</h3>
-	<dl>
-		<dt><code>pwd</code></dt>
-		<dd>Print working directory - displays what directory you are currently in.</dd>
-		<dt><code>ls</code></dt>
-		<dd>List - lists files and directories where you currently are.  <code>ls -al</code> shows long / all.</dd>
-		<dt><code>uname</code></dt>
-		<dd>System information, such as kernal, CPU, OS.</dd>
-		<dt><code>touch</code></dt>
-		<dd>Creates an empty file with the given name.</dd>
-		<dt><code>rm</code></dt>
-		<dd>Deletes a file.  Doesn't work on directories.</dd>
-		<dt><code>cp</code></dt>
-		<dd>Copy first file to a new file in the second argument.</dd>
-		<dt><code>alias</code></dt>
-		<dd>Set an alias to perform a specified command.</dd>
-		<dt><code>unalias</code></dt>
-		<dd>Remove a previously defined alias.</dd>
-		<dt><code>man [option]</code></dt>
-		<dd>Display manual for passed command.</dd>
-		<dt><code>whatis</code></dt>
-		<dd>Shows manual page descriptions.</dd>
-		<dt><code>info</code></dt>
-		<dd>More information than <code>whatis</code>.</dd>
-		<dt><code>cat file1 file2 > newfile</code></dt>
-		<dd>Concatenates two files together.  Pass only one file to view contents.</dd>
-		<dt><code>file</code></dt>
-		<dd>Displays file type.</dd>
-	</dl>
+	@include('linux.commands')
 </div>
 
 <div class="col-sm-9" id="main-study">
+	@include('linux.ch1')
+	@include('linux.ch2')
+	@include('linux.ch3')
+	@include('linux.ch4')
 
-	<h3>Chapter 1: Using the Shell</h3>
-	<hr />
-	<ul>
-		<li>Kernal: The kernel of the operating system is like an air traffic controller at an airport. The kernel dictates which program gets which pieces of memory, it starts and kills programs, and it handles displaying text on a monitor.</li>
-		<li>Bootloader: When the computer starts up, it loads a small piece of code called a bootloader. The bootloader’s job is to load the kernel and get it started.</li>
-	</ul>
 
-	<h5><code>uname</code> options</h5>
-	<table class="table ">
-		<thead><tr>
-		<th>Short Option</th>
-		<th>Long Option</th>
-		<th>Prints</th>
-		</tr></thead>
-		<tbody>
-		<tr>
-		<td><code>-a</code></td>
-		<td><code>--all</code></td>
-		<td>All information</td>
-		</tr>
-		<tr>
-		<td><code>-s</code></td>
-		<td><code>--kernel-name</code></td>
-		<td>Kernel name</td>
-		</tr>
-		<tr>
-		<td><code>-n</code></td>
-		<td><code>--node-name</code></td>
-		<td>Network node name</td>
-		</tr>
-		<tr>
-		<td><code>-r</code></td>
-		<td><code>--kernel-release</code></td>
-		<td>Kernel release</td>
-		</tr>
-		<tr>
-		<td><code>-v</code></td>
-		<td><code>--kernel-version</code></td>
-		<td>Kernel version</td>
-		</tr>
-		<tr>
-		<td><code>-m</code></td>
-		<td><code>--machine</code></td>
-		<td>Machine hardware name</td>
-		</tr>
-		<tr>
-		<td><code>-p</code></td>
-		<td><code>--processor</code></td>
-		<td>Processor type or unknown</td>
-		</tr>
-		<tr>
-		<td><code>-i</code></td>
-		<td><code>--hardware-platform</code></td>
-		<td>Hardware platform or unknown</td>
-		</tr>
-		<tr>
-		<td><code>-o</code></td>
-		<td><code>--operating-system</code></td>
-		<td>Operating system</td>
-		</tr>
-		<tr>
-		<td></td>
-		<td><code>--help</code></td>
-		<td>Help information</td>
-		</tr>
-		<tr>
-		<td></td>
-		<td><code>--version</code></td>
-		<td>Version information</td>
-		</tr>
-		</tbody>
-	</table>
-
-	<ul>
-		<li>Which command will send text to the terminal display: <code>echo</code></li>
-		<li>To display your current location within the filesystem, you can type: <code>pwd</code></li>
-		<li>The _____ command displays information about the Linux kernel: <code>uname</code></li>
-		<li>The basic form of a command line is: <code>command [options…] [arguments…]</code></li>
-		<li>The two login types are: CLI and GUI</li>
-		<li>You want to execute the ls command with two options: -r and -l. Which of the following are valid ways to run this command: (choose three) <code>ls -l -r</code>, <code>ls -r -l</code>, <code>ls -rl</code></li>
-		<li>The location of users' default shells is stored in the ______ file: /etc/passwd</li>
-		<li>Which two characters do you use to tell the command that you are finished providing options and that the remaining data on the command line is arguments?: <code>--</code></li>
-		<li>The _____ option to the uname command will display the kernel name: <code>-s</code></li>
-		<li>The ______ command will display your current working directory: <code>pwd</code></li>
-
-	</ul>
-
-	<h3>Chapter 2: <code>man</code> Pages</h3>
-	<hr />
-
-	<div class="alert alert-info">
-		<p>By default there are nine default sections of <code class="console">man</code> pages:</p>
-		<ol type="disc" class="">
-			<li>Executable programs or shell commands</li>
-			<li>System calls (functions provided by the kernel)</li>
-			<li>Library calls (functions within program libraries)</li>
-			<li>Special files (usually found in <code class="console">/dev</code>)</li>
-			<li>File formats and conventions, e.g. <code class="console">/etc/passwd</code>
-			</li>
-			<li>Games</li>
-			<li>Miscellaneous (including macro  packages and conventions), e.g. <code class="console">man(7)</code>, <code class="console">groff(7)</code>
-			</li>
-			<li>System administration commands (usually only for root)</li>
-			<li>Kernel routines [Non standard]</li>
-		</ol>
-	</div>
-
-	<h5><code>man</code> page commands</h5>
-	<table class="table ">
-		<thead><tr>
-		<th>Command</th>
-		<th>Function</th>
-		</tr></thead>
-		<tbody>
-		<tr>
-		<td>
-		<strong>Return</strong> (or <strong>Enter</strong>)</td>
-		<td>Go down one line</td>
-		</tr>
-		<tr>
-		<td><strong>Space</strong></td>
-		<td>Go down one page</td>
-		</tr>
-		<tr>
-		<td><code class="input">/<var>term</var></code></td>
-		<td>Search for <var><code class="console">term</code></var>
-		</td>
-		</tr>
-		<tr>
-		<td><code class="input">n</code></td>
-		<td>Find next search item</td>
-		</tr>
-		<tr>
-		<td><code class="input">1G</code></td>
-		<td>Go to beginning of the page</td>
-		</tr>
-		<tr>
-		<td><code class="input">G</code></td>
-		<td>Go to end of the page</td>
-		</tr>
-		<tr>
-		<td><code class="input">h</code></td>
-		<td>Display help</td>
-		</tr>
-		<tr>
-		<td><code class="input">q</code></td>
-		<td>Quit <code class="console">man</code> page</td>
-		</tr>
-		</tbody>
-	</table>
-
-	<h5>man page sections</h5>
-
-	<table class="table ">
-		<thead><tr>
-		<th>Command</th>
-		<th>Function</th>
-		</tr></thead>
-		<tbody>
-		<tr>
-		<td>
-		<strong>Return</strong> (or <strong>Enter</strong>)</td>
-		<td>Go down one line</td>
-		</tr>
-		<tr>
-		<td><strong>Space</strong></td>
-		<td>Go down one page</td>
-		</tr>
-		<tr>
-		<td><code class="input">/<var>term</var></code></td>
-		<td>Search for <var><code class="console">term</code></var>
-		</td>
-		</tr>
-		<tr>
-		<td><code class="input">n</code></td>
-		<td>Find next search item</td>
-		</tr>
-		<tr>
-		<td><code class="input">1G</code></td>
-		<td>Go to beginning of the page</td>
-		</tr>
-		<tr>
-		<td><code class="input">G</code></td>
-		<td>Go to end of the page</td>
-		</tr>
-		<tr>
-		<td><code class="input">h</code></td>
-		<td>Display help</td>
-		</tr>
-		<tr>
-		<td><code class="input">q</code></td>
-		<td>Quit <code class="console">man</code> page</td>
-		</tr>
-		</tbody>
-	</table>
-
-	<h5>Navigating man pages</h5>
-	<table class="table ">
-		<thead><tr>
-		<th>Command</th>
-		<th>Function</th>
-		</tr></thead>
-		<tbody>
-		<tr>
-		<td>
-		<strong>Return</strong> (or <strong>Enter</strong>)</td>
-		<td>Go down one line</td>
-		</tr>
-		<tr>
-		<td><strong>Space</strong></td>
-		<td>Go down one page</td>
-		</tr>
-		<tr>
-		<td><code class="input">/<var>term</var></code></td>
-		<td>Search for <var><code class="console">term</code></var>
-		</td>
-		</tr>
-		<tr>
-		<td><code class="input">n</code></td>
-		<td>Find next search item</td>
-		</tr>
-		<tr>
-		<td><code class="input">1G</code></td>
-		<td>Go to beginning of the page</td>
-		</tr>
-		<tr>
-		<td><code class="input">G</code></td>
-		<td>Go to end of the page</td>
-		</tr>
-		<tr>
-		<td><code class="input">h</code></td>
-		<td>Display help</td>
-		</tr>
-		<tr>
-		<td><code class="input">q</code></td>
-		<td>Quit <code class="console">man</code> page</td>
-		</tr>
-		</tbody>
-	</table>
-
-	<ul>
-		<li>Which command is used in order to view the manual page for a topic?: <code>man</code></li>
-		<li>Which of the following man page sections will provide an example of how a command is executed?: The SYNOPSIS section</li>
-		<li>The [ ] characters around day in the example <code>cal [-smjy13] [[[day] month] year]</code> means that day is: Optional</li>
-		<li>The syntax <code>[-u|--utc|--universal]</code> means: These three options mean the same thing</li>
-		<li>The command man 5 passwd will: Display the man page of Section 5 for <code>passwd</code></li>
-		<li>To see a list of commands that are available while viewing a man page, you can type the __ character: <code>h</code></li>
-		<li>To search for something while viewing a man page, you first type a __ character: <code>/</code></li>
-		<li>Special file man pages are typically located in section ____: 4</li>
-		<li>System Administration man pages are typically located in section ___: 8</li>
-		<li>Shell command man pages are typically located in section ___: 1</li>
-	</ul>
 
 	<h3>Chapter 3: Text Utilities</h3>
 	<hr />
@@ -509,112 +234,112 @@
 	</table>
 
 	<table class="table ">
-<thead><tr>
-<th>Action</th>
-<th>Key</th>
-<th>Alternate Key Combination</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Previous history item</td>
-<td>↑</td>
-<td><strong>Ctrl+P</strong></td>
-</tr>
-<tr>
-<td>Next history item</td>
-<td>↓</td>
-<td><strong>Ctrl+N</strong></td>
-</tr>
-<tr>
-<td>Reverse history search</td>
-<td></td>
-<td><strong>Ctrl+R</strong></td>
-</tr>
-<tr>
-<td>Beginning of line</td>
-<td><strong>Home</strong></td>
-<td><strong>Ctrl+A</strong></td>
-</tr>
-<tr>
-<td>End of line</td>
-<td><strong>End</strong></td>
-<td><strong>Ctrl+E</strong></td>
-</tr>
-<tr>
-<td>Delete current character</td>
-<td><strong>Delete</strong></td>
-<td><strong>Ctrl+D</strong></td>
-</tr>
-<tr>
-<td>Delete to left of cursor</td>
-<td><strong>Backspace</strong></td>
-<td><strong>Ctrl+X</strong></td>
-</tr>
-<tr>
-<td>Move cursor left</td>
-<td>←</td>
-<td><strong>Ctrl+B</strong></td>
-</tr>
-<tr>
-<td>Move cursor right</td>
-<td>→</td>
-<td><strong>Ctrl+F</strong></td>
-</tr>
-</tbody>
-</table>
+		<thead><tr>
+		<th>Action</th>
+		<th>Key</th>
+		<th>Alternate Key Combination</th>
+		</tr></thead>
+		<tbody>
+		<tr>
+		<td>Previous history item</td>
+		<td>↑</td>
+		<td><strong>Ctrl+P</strong></td>
+		</tr>
+		<tr>
+		<td>Next history item</td>
+		<td>↓</td>
+		<td><strong>Ctrl+N</strong></td>
+		</tr>
+		<tr>
+		<td>Reverse history search</td>
+		<td></td>
+		<td><strong>Ctrl+R</strong></td>
+		</tr>
+		<tr>
+		<td>Beginning of line</td>
+		<td><strong>Home</strong></td>
+		<td><strong>Ctrl+A</strong></td>
+		</tr>
+		<tr>
+		<td>End of line</td>
+		<td><strong>End</strong></td>
+		<td><strong>Ctrl+E</strong></td>
+		</tr>
+		<tr>
+		<td>Delete current character</td>
+		<td><strong>Delete</strong></td>
+		<td><strong>Ctrl+D</strong></td>
+		</tr>
+		<tr>
+		<td>Delete to left of cursor</td>
+		<td><strong>Backspace</strong></td>
+		<td><strong>Ctrl+X</strong></td>
+		</tr>
+		<tr>
+		<td>Move cursor left</td>
+		<td>←</td>
+		<td><strong>Ctrl+B</strong></td>
+		</tr>
+		<tr>
+		<td>Move cursor right</td>
+		<td>→</td>
+		<td><strong>Ctrl+F</strong></td>
+		</tr>
+		</tbody>
+	</table>
 
-<table class="table ">
-<thead><tr>
-<th>Option</th>
-<th>Purpose</th>
-</tr></thead>
-<tbody>
-<tr>
-<td><code>-c</code></td>
-<td>Clear the list</td>
-</tr>
-<tr>
-<td><code>-r</code></td>
-<td>Read the history file and replace the current history</td>
-</tr>
-<tr>
-<td><code>-w</code></td>
-<td>Write the current history list to the history file</td>
-</tr>
-</tbody>
-</table>
+	<table class="table ">
+		<thead><tr>
+		<th>Option</th>
+		<th>Purpose</th>
+		</tr></thead>
+		<tbody>
+		<tr>
+		<td><code>-c</code></td>
+		<td>Clear the list</td>
+		</tr>
+		<tr>
+		<td><code>-r</code></td>
+		<td>Read the history file and replace the current history</td>
+		</tr>
+		<tr>
+		<td><code>-w</code></td>
+		<td>Write the current history list to the history file</td>
+		</tr>
+		</tbody>
+	</table>
 
-<table class="table ">
-<thead><tr>
-<th>History Command</th>
-<th>Meaning</th>
-</tr></thead>
-<tbody>
-<tr>
-<td><code>!!</code></td>
-<td>Repeat the last command</td>
-</tr>
-<tr>
-<td><code>!-4</code></td>
-<td>Execute the command that was run four commands ago</td>
-</tr>
-<tr>
-<td><code>!555</code></td>
-<td>Execute command number <code class="console">555</code>
-</td>
-</tr>
-<tr>
-<td><code>!ec</code></td>
-<td>Execute the last command that started with <code class="console">ec</code>
-</td>
-</tr>
-<tr>
-<td><code>!?joe</code></td>
-<td>Execute the last command that contained <code class="console">joe</code>
-</td>
-</tr>
-</tbody>
-</table>
+	<table class="table ">
+		<thead><tr>
+		<th>History Command</th>
+		<th>Meaning</th>
+		</tr></thead>
+		<tbody>
+		<tr>
+		<td><code>!!</code></td>
+		<td>Repeat the last command</td>
+		</tr>
+		<tr>
+		<td><code>!-4</code></td>
+		<td>Execute the command that was run four commands ago</td>
+		</tr>
+		<tr>
+		<td><code>!555</code></td>
+		<td>Execute command number <code class="console">555</code>
+		</td>
+		</tr>
+		<tr>
+		<td><code>!ec</code></td>
+		<td>Execute the last command that started with <code class="console">ec</code>
+		</td>
+		</tr>
+		<tr>
+		<td><code>!?joe</code></td>
+		<td>Execute the last command that contained <code class="console">joe</code>
+		</td>
+		</tr>
+		</tbody>
+	</table>
 
 	<ul>
 		<li>The PATH environment variable is used for: Specifying directories to search for executable files</li>
