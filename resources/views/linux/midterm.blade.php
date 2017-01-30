@@ -18,6 +18,7 @@
             	left:0;
             	background:tan;
             	color: black;
+            	padding-bottom: 80px;
             }
 
             #linux-commands dt {
@@ -31,6 +32,14 @@
             	top:80px;
             	bottom:0;
             	right:0;
+            	padding-bottom:80px;
+            }
+
+            #main-study h3 {
+            	padding:10px;
+            	margin: 0;
+            	background-color: tan;
+            	color: black;
             }
         </style>
 
