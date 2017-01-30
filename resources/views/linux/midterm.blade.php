@@ -3,19 +3,32 @@
 @section('content')
         <!-- Styles -->
         <style>
-            html, body {
-                overflow:hidden;
-                height: 100%;
-                margin: 0;
-            }
+            @media (min-width: 768px) {
+	           	html, body {
+	                overflow:hidden;
+	                height: 100%;
+	                margin: 0;
+	            }
 
+            	#linux-commands {
+	            	overflow-y: scroll;
+	            	position: absolute;
+	            	top:80px;
+	            	bottom: 0;
+	            	left:0;
+            	}
+
+            	#main-study {
+	            	overflow-y:scroll;
+	            	position:absolute;
+	            	top:80px;
+	            	bottom:0;
+	            	right:0;
+            	}
+            }
+            
             #linux-commands {
             	height:100%;
-            	overflow-y: scroll;
-            	position: absolute;
-            	top:80px;
-            	bottom: 0;
-            	left:0;
             	background:tan;
             	color: black;
             	padding-bottom: 80px;
@@ -27,11 +40,6 @@
 
             #main-study {
             	height:100%;
-            	overflow-y:scroll;
-            	position:absolute;
-            	top:80px;
-            	bottom:0;
-            	right:0;
             	padding-bottom:80px;
             }
 
