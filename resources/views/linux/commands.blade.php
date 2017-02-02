@@ -10,6 +10,8 @@
 		<dd>Displays file type.</dd>
 		<dt><code>find</code></dt>
 		<dd>Finds files, even new ones.  Slower than locate since it's not using a database.</dd>
+		<dt><code>grep</code></dt>
+		<dd>Filter text from data (pattern matching).</dd>
 		<dt><code>info</code></dt>
 		<dd>More information than <code>whatis</code>.</dd>
 		<dt><code>locate</code></dt>
