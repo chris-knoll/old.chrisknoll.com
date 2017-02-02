@@ -10,10 +10,16 @@
 		<dd>Displays file type.</dd>
 		<dt><code>find</code></dt>
 		<dd>Finds files, even new ones.  Slower than locate since it's not using a database.</dd>
+		<dt><code>free</code></dt>
+		<dd>Displays basic system memory statistics.</dd>
 		<dt><code>grep</code></dt>
 		<dd>Filter text from data (pattern matching).</dd>
 		<dt><code>info</code></dt>
 		<dd>More information than <code>whatis</code>.</dd>
+		<dt><code>jobs</code></dt>
+		<dd>Display background processes.</dd>
+		<dt><code>kill</code></dt>
+		<dd>Stops a background process</dd>
 		<dt><code>locate</code></dt>
 		<dd>Uses a database to find files.  <code>updatedb</code> can be ran to update the database of files.  Faster than <code>find</code> since it uses the database.</dd>
 		<dt><code>ls</code></dt>
@@ -22,12 +28,18 @@
 		<dd>Display manual for passed command.</dd>
 		<dt><code>mkdir</code></dt>
 		<dd>Makes a directory.</dd>
+		<dt><code>ps</code></dt>
+		<dd>Displays a list of commands that are currently running in the shell. <code>-fe</code> displays all processes running.</dd>
 		<dt><code>pwd</code></dt>
 		<dd>Print working directory - displays what directory you are currently in.</dd>
 		<dt><code>rm</code></dt>
 		<dd>Deletes a file.  Doesn't work on directories.</dd>
 		<dt><code>rmdir</code></dt>
 		<dd>Removes a directory.</dd>
+		<dt><code>sleep</code></dt>
+		<dd>Sleeps the system for specified amount of seconds.</dd>
+		<dt><code>top</code></dt>
+		<dd>Displays a real-time view of running processes.</dd>
 		<dt><code>touch</code></dt>
 		<dd>Creates an empty file with the given name.</dd>
 		<dt><code>type</code></dt>
