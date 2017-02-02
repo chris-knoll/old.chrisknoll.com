@@ -36,6 +36,8 @@
 		<dd>Remove a previously defined alias.</dd>
 		<dt><code>uname</code></dt>
 		<dd>System information, such as kernal, CPU, OS.</dd>
+		<dt><code>vi</code></dt>
+		<dd>The coolest text editor around.  Open a file or create one if it doesn't exist.</dd>
 		<dt><code>whatis</code></dt>
 		<dd>Shows manual page descriptions.</dd>
 		<dt><code>whereis</code></dt>
