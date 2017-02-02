@@ -64,5 +64,6 @@
 	@include('linux.ch4')
 	@include('linux.ch5')
 	@include('linux.ch6')
+    @include('linux.ch7')
 </div>
 @endsection
