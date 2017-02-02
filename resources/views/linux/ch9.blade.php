@@ -72,7 +72,6 @@
 	</tbody>
 </table>
 
-<h3>Delete</h3>
 <p>Delete removes the indicated text from the page and saves it into the buffer, the buffer being the equivalent of the "clipboard" used in Windows or Mac OSX. The following table provides some common usage examples:</p>
 
 <table class="table ">
@@ -104,8 +103,6 @@
 </tbody>
 </table>
 
-<h3>Change</h3>
-
 <p>Change is very similar to delete, the text is removed and saved into the buffer, however the program is switched to insert mode to allow immediate changes to the text. The following table provides some common usage examples:</p>
 
 <table class="table ">
@@ -132,8 +129,6 @@
 </tr>
 </tbody>
 </table>
-
-<h3>Yank</h3>
 
 <p>Yank places content into the buffer without deleting it. The following table provides some common usage examples:</p>
 
@@ -162,8 +157,6 @@
 </tbody>
 </table>
 
-<h3>Put</h3>
-
 <p>Put places the text saved in the buffer either before or after the cursor position. Notice that these are the only two options, put does not use the motions like the previous action commands.</p>
 
 <table class="table ">
@@ -182,7 +175,6 @@
 </tr>
 </tbody>
 </table>
-
 
 <table class="table ">
 <thead><tr>
