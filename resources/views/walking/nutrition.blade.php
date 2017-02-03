@@ -160,5 +160,318 @@
 
 	<p>A landmark review of over 4,500 research studies concluded that widespread consumption of 5 to 6 servings of fruits and vegetables per day would lower cancer rates by over 20% worldwide (American Institute Of Cancer Research, 1997).</p>
 
+	<h3>6 Classes of Essential Nutrients</h3>
+	<p>Macronutrients: Carbohydrates, Proteins, Lipids, Water</p>
+	<p>Micronutrients: Vitamins, Minerals</p>
+	<p>Carbs, proteins, fats, and vitamins are carbon containing.  All but vitamins are calorie containing.</p>
+
+	<h3>Acceptable Macronutrient Distribution Ranges (AMDRs)</h3>
+
+	<p>Recommended protein, carbohydrate, and fat intake ranges to decrease disease risk and provide diet flexibility</p>
+
+	<p>Percentages of total calories</p>
+	<ul>
+		<li>10–35% of calories from protein</li>
+		<li>45–65% of calories from carbohydrates</li>
+		<li>20–35% of calories from fat (&lt;10% from saturated fat)</li>
+	</ul>
+
+	<h3>Caloric Needs</h3>
+	<p>Approximately 2000 calories per day meets the energy needs of most people.</p>
+
+	<p>3 nutrients supply energy</p>
+	<ul>
+		<li>Fat = 9 calories per gram</li>
+		<li>Protein = 4 calories per gram</li>
+		<li>Carbohydrates = 4 calories per gram</li>
+		<li>Alcohol = 7 calories per gram (not essential)</li>
+	</ul>
+
+	<h3>Water</h3>
+	The human body consists of 50-70% water by weight.
+
+	DRI = How many cups of total water from all beverages and foods each day are recommended for…
+	Women:
+	Men:
+	Individual needs for water vary drastically
+	Approximately ½ your body weight in ounces depending on…
+	Do caffeinated beverages cause dehydration?
+
+	<h3>Proteins</h3>
+	List the functions of proteins:
+
+	Amino Acids (building blocks of proteins):
+
+	Twenty common amino acids.
+
+	Nine essential amino acids.
+	Eleven nonessential amino acids
+
+	Complete proteins (high quality) provide all essential amino acids.
+	Animal Sources (meats and dairy)
+
+	Incomplete proteins lack 1-2 essential amino acids
+	Best Plant Sources (beans, peas, and nuts)
+
+	Complimentary proteins (See Figure 9.1—pg 265)
+	Recommended protein intake:
+
+	10-35% of total calorie intake
+	More specifically, .8 grams per kilogram of body weight
+
+	How much do you weigh in kilograms?
+	(body weight in lbs divided by 2.2 = body weight in kilograms)
+
+	<h3>Carbohydrates</h3>
+	Best fuel for moderate to intense exercise—readily broken down to glucose.
+
+	Fuel for the brain, nervous system, body and body’s cells
+
+	Simple Carbohydrates
+	Fruits, many vegetables and sweets 
+
+	Complex Carbohydrates
+	Grains, cereals, and vegetables
+
+	<h5>Complex vs Simple Carbohydrates/Sugars</h5>
+	Simple Carbohydrates (sugars)
+	One or two sugar units (mono and disaccharides)
+	Fruit, sugar, honey, malt, and milk
+	Glucose, fructose, sucrose, lactose, maltose
+
+	Complex Carbohydrates (starches and fiber)
+	Multiple sugar units (polysaccharides)
+	Starches and fiber
+	Grains – wheat, rye, rice, oats, barley, and millet
+	Legumes – dry beans, peas, and lentils
+	Tubers – potatoes and yams…
+	Cruciferous vegetables—broccoli, cauliflower, cabbage, Brussels sprouts
+	Dark leafy green, dark orange, yellow, and red vegetables and some fruits
+
+	Adults require 45-65% of total daily calories 	or 225-325 grams in carbohydrates within a 2,000 calorie diet.
+	Simple carbohydrates = 10%
+	Complex carbohydrates = 50%
+
+	What is glycogen?
+
+	Where do we store glycogen?
+
+	World Health Organization (WHO)–recommends 	a limit of 10% of total calories from added 	sugars—simple carbohydrates.
+
+	<h3>Complex Carb: Fiber</h3>
+	Often referred to as “bulk or roughage”
+
+	Sources (all plant substances):
+	 
+	Recommended intake
+	25-38 grams per day for most people
+	From foods not supplements
+
+	Dietary fiber—indigestible parts of plants
+	Functional fiber—from plants or manufactured
+	Soluble fibers—dissolve in water
+	Insoluble fibers—do not dissolve in water
+
+	Possible Benefits of Fiber
+	May reduce risk of…
+
+	colon and rectal cancer
+	constipation
+	heart disease
+	type 2 diabetes
+	obesity
+
+	What can you do to “bulk up” your fiber intake?
+		(See Skills for Behavior Change, pg 267)
+
+	<h3>Fats / Lipids</h3>
+	Most concentrated source of energy
+	Stored energy and provides insulation and support for body organs; additional functions include:
+
+	Cholesterol— 5% of body fat
+	Triglycerides— 95% of body fat
+
+	Saturated Fat—less than 10% of diet
+	Monounsaturated—10 % of diet
+	Polyunsaturated—10 % of diet
+	Hydrogenation—produces trans-fats
+	Trans fatty acids—should be avoided
+
+	Explain the difference between HDLs and LDLs:
+
+	Where do you get saturated fats and why should they be limited in the diet?
+
+	Where do you get healthy unsaturated fats and why are they beneficial?
+
+	Why should you limit trans fatty acids in the diet?
+
+	Do health experts recommend adding coconut oil to you diet?  Why or why not?
+
+	<h3>Vitamins</h3>
+	Organic substances used to regulate body processes; catalysts
+	 (See Table 9.2—pg 270)
+
+	Fat-soluble (stored)
+	A, D, E, K
+
+	Water-soluble (flushed, not stored)
+	B-complex and C
+
+	<h3>Minerals</h3>
+	Inorganic substances used to regulate body processes and maintain body tissue
+	(See Tables 9.3—pg 271)
+
+	Major minerals:
+
+	Trace minerals:
+
+	Sodium, Calcium and Iron need special attention
+
+	<h3>Beneficial Non-Nutrient Components of Foods</h3>
+	Antioxidants and phytochemicals appear to protect people from the ravages of oxidative stress, tissue damage, and chronic disease.
+
+	Vitamin C, Vitamin E, selenium
+
+	Carotenoids, Polyphenols, Flavonoids and more…
+	Part of the red, orange and yellow pigments found in fruits and vegetables
+	Beta-carotene, lycopene, lutein
+
+	<h3>Phytochemicals (image)</h3>
+
+	<h3>Choosing a Healthy Diet</h3>
+	Variety—foods from different food groups; diverse foods within each food group.
+
+	Balance—balance your choices; a diet that provides enough without excess; balance low fiber with high fiber, high fat with low-fat, or being sedentary with physical activity.
+
+	Moderation—don’t overdo it; not too many calories, alcohol, sodium, saturated fats, or sugar.  Practice portion control.  Moderation allows you to balance your diet and eat a variety of foods.
+
+	Nutrient density—focus on foods high in vitamins and minerals compared to calories
+
+	<h3>Dietary Guidelines for Americans, 2010</h3>
+	Balance calories to manage weight
+
+	Food and food components to reduce (list):
+
+	Foods and nutrients to increase (list):
+
+	Build healthy eating patterns
+
+	<h3>MyPlate Food Guidance System</h3>
+	Eat Nutrient-Dense Foods:
+
+
+	Reduce Empty Calorie Foods:
+
+
+	Physical Activity:
+
+	<h3>Empty Calories</h3>
+	One third of the calories American consume come from junk foods with no nutritional value, such as sweets, soft drinks, and alcoholic beverages
+
+	Sugar and fat laden foods do little to nourish your body.
+
+	<h3>Eating patterns</h3>
+	DASH
+	Focus on potassium, calcium, magnesium, protein, and fiber
+	Plentiful in fruits and vegetables, whole grains, low-fat dairy, fish, poultry, seeds, and nuts
+
+	Mediterranean
+	Based on fruits, vegetables, grains, olive oil, beans, nuts, and seeds
+	Moderate portions of cheese and yogurt
+	Fish and seafood at least twice a week
+	Poultry and eggs every few days
+	Red meat and sweets less often
+
+	<h3>Reading labels</h3>
+	Serving Size—number of servings in the package
+
+	Calories and Calories from Fat—high in calories from fat?
+
+	Daily Values—
+	based on 2,000 calories
+	5% or less is low
+	20% or more is high
+
+	Nutrients
+	Limit total fat, saturated fat, cholesterol and sodium
+	Focus on dietary fiber, vitamin A, calcium and iron
+
+	<h3>Understanding Serving Sizes</h3>
+	How does a serving differ from a portion?
+
+	What does one serving of peanut butter look like?
+
+	What does one serving of fresh fruit look like?
+
+	What does one serving of cereal look like?
+
+	What does one serving of rice or pasta look like?
+
+	What does one serving of ice cream look like?
+
+	<h3>Dietary Supplements</h3>
+	The Academy of Nutrition and Dietetics recommends that, though some people benefit from taking supplements, a healthy diet is the best way to give your body what it needs.
+
+	Dietary supplements are not regulated like other food and drug products
+
+	The FDA does not evaluate the safety and efficacy of supplements prior to marketing.
+
+	Many contradictory studies in this area
+
+	<h3>Eating Well in College</h3>
+	Know nutrient density of various fast foods—ask for nutritional analyses
+
+	Order salads—dressings on the side
+
+	Avoid giant portion sizes
+
+	Limit sodas and other beverages with added sugars
+
+	At least once a week, substitute a vegetable-based meat alternative into your fast-food choices
+
+	Between classes, avoid vending machines—keep an apple, banana, dried fruit and nuts, etc. in your backpack.
+
+	<h3>Organic Foods</h3>
+	Organic
+
+	Foods and beverages developed, grown, or raised without the use of synthetic pesticides, chemicals, or hormones
+
+	Certified Organic categories:
+
+	“100 percent Organic”
+	“Organic”  95%
+	“Made with Organic Ingredients”  &gt;70%
+	“Some Organic Ingredients” &lt;70%
+
+	Locavore
+	A person who primarily eats food grown or produced locally
+
+	<h3>Food Safety</h3>
+	Foodborne Illnesses
+	(See Skills for Behavior Change—pg 285)
+
+	Signs and symptoms of foodborne illness:
+
+	Avoid Risk at Home
+
+	What are the four core practices recommended to prevent foodborne illness?
+
+	<h3>Food Sensitivities</h3>
+	Food Allergy—hypersensitivity
+
+	Symptoms
+	Tingling in mouth; swelling of lips, tongue and throat; difficulty breathing; hives; vomiting; abdominal cramps; diarrhea…
+
+	Eight Major Food Allergens
+	Milk, eggs, peanuts, wheat, soy, tree nuts (walnuts, 	pecans, pistachios etc.), fish, and shellfish
+
+	Celiac Disease—gluten (wheat, rye and barley)
+	(See Health Headlines:  Gluten-Free Diets pg. 286)
+
+	Food Intolerance
+	Lactose intolerance
+
+	<h3>Genetically Modified Food Crops</h3>
+	Boon or Bane (pg 267)?
 </div>
 @endsection
