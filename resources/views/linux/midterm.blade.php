@@ -71,5 +71,6 @@
     @include('linux.ch11')
     @include('linux.ch12')
     @include('linux.ch13')
+    @include('linux.ch14')
 </div>
 @endsection
