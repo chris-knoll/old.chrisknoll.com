@@ -15,7 +15,7 @@
 </head>
 <body>
     {{--Nav--}}
-    {{-- @include('partials.nav') --}}
+    @include('partials.nav')
 
     {{--Content--}}
     <div class="container">

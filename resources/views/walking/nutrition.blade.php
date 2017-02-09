@@ -51,8 +51,6 @@
             }
         </style>
 
-	<h1>Nutrition Test Notes (Chapter 9)</h1>
-
 <div class="col-sm-3" id="terms">
 	<dl>
 		<dt>Adequate Intakes (AIs)</dt>

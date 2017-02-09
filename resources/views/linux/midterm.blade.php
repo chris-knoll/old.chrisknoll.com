@@ -51,8 +51,6 @@
         }
     </style>
 
-	<h1>Midterm Study Notes (Ch 1 - 14)</h1>
-
     <div class="col-sm-3" id="linux-commands">
     	@include('linux.commands')
     </div>
