@@ -17,5 +17,6 @@ Route::get('/', function () {
 
 Route::get('/linux', 'LinuxController@index')->name('linux');
 Route::get('/linux/midterm', 'LinuxController@midterm')->name('linux-midterm');
+Route::get('/linux/final', function() { return view('linux.final'); });
 Route::get('/nutrition', function() { return view('walking.nutrition'); });
 Route::get('/git', function() { return view('git'); });
