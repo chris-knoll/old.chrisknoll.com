@@ -25,3 +25,8 @@ Route::get('/nutrition', function() { return view('walking.nutrition'); })
     ->name('fitness');
 Route::get('/git', function() { return view('git'); })
     ->name('git');
+
+Route::get('/fantasy', function() { return view('fantasy.main'); })
+    ->name('fantasy');
+Route::post('/fantasy', 'FantasyController@parseInput')
+    ->name('fantasy.parse');

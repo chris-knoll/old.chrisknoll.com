@@ -23,7 +23,6 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Study Notes <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('linux') }}">Linux</a></li>
                         <li><a href="{{ route('git') }}">Git</a></li>
                         <li><a href="{{ route('fitness') }}">Fitness</a></li>
                     </ul>

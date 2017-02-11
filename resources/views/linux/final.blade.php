@@ -51,8 +51,6 @@
         }
     </style>
 
-    <h1>Final Study Notes (Ch 15 - 27)</h1>
-
     <div class="col-sm-3" id="linux-commands">
         @include('linux.commands')
     </div>
