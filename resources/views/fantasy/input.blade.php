@@ -1,19 +1,19 @@
 <form action="{{ route('fantasy.parse') }}" method="post">
-    <div class="form-check">
-        <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="team" id="myteam" value="myteam" checked>
-            My Team
-        </label>
-
-        <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="team" id="opponent" value="opponent">
-            Opponent's Team
-        </label>
-    </div>
 
     <div class="form-group">
         <label for="exampleTextarea">Input Team Statistics in box below</label>
-        <textarea class="form-control" id="team-input" name="team-stats" rows="5"></textarea>
+        <textarea class="form-control" id="team-input" name="team-stats" rows="5">
+            {{ old('team-stats') }}
+        </textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleTextarea">NBA Team Games Schedule (Copy one row of numbers only from 
+            <a href="https://basketballmonster.com/ScheduleGrid.aspx" target="_blank">here</a>)
+        </label>
+        <textarea class="form-control" id="games-input" name="games" rows="1">
+            {{ old('games') }}
+        </textarea>
     </div>
 
     <div class="form-group">

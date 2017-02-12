@@ -9,11 +9,13 @@ class FantasyController extends Controller
     //
     public function parseInput(Request $request)
     {
+        $teamGames = $this->parseTeamGames($request->input('games'));
         $stats = preg_split('/[^\\S ]+/', $request->input('team-stats'));
         //print_r($stats);
 
         $currentPlayer = array();
-        $parsedStats = array();
+        $myTeam = array();
+        $opponentTeam = array();
 
         foreach ($stats as $stat)
         {
@@ -26,6 +28,11 @@ class FantasyController extends Controller
 
                 $team = explode(' ', $player[1]);
                 array_push($currentPlayer, strtoupper($team[1]));
+
+                if (array_key_exists($currentPlayer[2], $teamGames))
+                {
+                    array_push($currentPlayer, $teamGames[$currentPlayer[2]]);
+                }
             }
             // Check if this is the upcoming game - throw it away
             else if ($this->isUpcomingGame($stat))
@@ -33,17 +40,31 @@ class FantasyController extends Controller
                 // Ignore current stat AND remove the previous one as it's the opponent they're playing
                 array_pop($currentPlayer);
             }
+            else if (sizeOf($currentPlayer) > 8 && 
+                    sizeOf($currentPlayer) < 16)
+            {
+                // These are our calculating stats so multiply by the number of games this player plays
+                array_push($currentPlayer, $stat * $currentPlayer[3]);
+            }
             // Only need 18 stats
-            else if (sizeOf($currentPlayer) < 18)
+            else if (sizeOf($currentPlayer) < 19)
             {
                 // Push it onto the array
                 array_push($currentPlayer, $stat);
             }
 
-            if (sizeOf($currentPlayer) == 18 &&
+            if (sizeOf($currentPlayer) == 19 &&
                 $this->isPosition($currentPlayer[0]))
             {
-                array_push($parsedStats, $currentPlayer);
+                if($currentPlayer[3] !== '--')
+                {
+                    if(sizeOf($myTeam) < 13)
+                    {
+                        array_push($myTeam, $currentPlayer);
+                    } else {
+                        array_push($opponentTeam, $currentPlayer);
+                    }
+                }
                 $currentPlayer = array();
             }
 
@@ -52,10 +73,20 @@ class FantasyController extends Controller
                 $currentPlayer = array();
                 array_push($currentPlayer, $stat);
             }
-
         }
 
-        return view('fantasy.main', ['myTeamStats' => $parsedStats]);
+        usort($myTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
+        usort($opponentTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
+
+        $myTotals = $this->calculateTeamStats($myTeam);
+        $opponentTotals = $this->calculateTeamStats($opponentTeam);
+
+        return view('fantasy.main', [
+            'myTeam' => $myTeam,
+            'opponentTeam' => $opponentTeam,
+            'myTotals' => $myTotals,
+            'opponentTotals' => $opponentTotals
+        ]);
     }
 
     public function isPosition($string)
@@ -86,4 +117,70 @@ class FantasyController extends Controller
         }
     }
 
+    public function parseTeamGames($string)
+    {
+        $rawGames = preg_split('/[\t]+/', $string);
+        $gamesPerTeam = array(
+            'ATL' => $rawGames[0],
+            'BKN' => $rawGames[1],
+            'BOS' => $rawGames[2],
+            'CHA' => $rawGames[3],
+            'CHI' => $rawGames[4],
+            'CLE' => $rawGames[5],
+            'DAL' => $rawGames[6],
+            'DEN' => $rawGames[7],
+            'DET' => $rawGames[8],
+            'GS' => $rawGames[9],
+            'HOU' => $rawGames[10],
+            'IND' => $rawGames[11],
+            'LAC' => $rawGames[12],
+            'LAL' => $rawGames[13],
+            'MEM' => $rawGames[14],
+            'MIA' => $rawGames[15],
+            'MIL' => $rawGames[16],
+            'MIN' => $rawGames[17],
+            'NOR' => $rawGames[18],
+            'NY' => $rawGames[19],
+            'OKC' => $rawGames[20],
+            'ORL' => $rawGames[21],
+            'PHI' => $rawGames[22],
+            'PHO' => $rawGames[23],
+            'POR' => $rawGames[24],
+            'SAC' => $rawGames[25],
+            'SAS' => $rawGames[26],
+            'TOR' => $rawGames[27],
+            'UTA' => $rawGames[28],
+            'WSH' => $rawGames[29]
+        );
+
+        return $gamesPerTeam;
+    }
+
+    public function calculateTeamStats($teamStats)
+    {
+        $totalStats = array(
+            'GAMES' => 0,
+            '3PM' => 0,
+            'REB' => 0,
+            'AST' => 0,
+            'STL' => 0,
+            'BLK' => 0,
+            'TO' => 0,
+            'PTS' => 0
+        );
+
+        foreach($teamStats as $player)
+        {
+            $totalStats['GAMES'] += $player[3];
+            $totalStats['3PM'] += $player[9];
+            $totalStats['REB'] += $player[10];
+            $totalStats['AST'] += $player[11];
+            $totalStats['STL'] += $player[12];
+            $totalStats['BLK'] += $player[13];
+            $totalStats['TO'] += $player[14];
+            $totalStats['PTS'] += $player[15];
+        }
+
+        return $totalStats;
+    }
 }
