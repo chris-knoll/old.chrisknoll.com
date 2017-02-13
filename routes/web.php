@@ -28,5 +28,5 @@ Route::get('/git', function() { return view('git'); })
 
 Route::get('/fantasy', function() { return view('fantasy.main'); })
     ->name('fantasy');
-Route::post('/fantasy', 'FantasyController@parseInput')
-    ->name('fantasy.parse');
+Route::post('/fantasy', 'FantasyController@calculateWeeklyStats')
+    ->name('fantasy.calculate');

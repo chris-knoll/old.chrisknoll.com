@@ -7,15 +7,34 @@ use Illuminate\Http\Request;
 class FantasyController extends Controller
 {
     //
-    public function parseInput(Request $request)
+    public function calculateWeeklyStats(Request $request)
     {
         $teamGames = $this->parseTeamGames($request->input('games'));
-        $stats = preg_split('/[^\\S ]+/', $request->input('team-stats'));
+        $myAverages = preg_split('/[^\\S ]+/', $request->input('my-team-stats'));
+        $opponentAverages = preg_split('/[^\\S ]+/', $request->input('opponent-team-stats'));
         //print_r($stats);
 
+        $myTeam = $this->parseTeamPlayers($myAverages, $teamGames);
+        $opponentTeam = $this->parseTeamPlayers($opponentAverages, $teamGames);
+
+        usort($myTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
+        usort($opponentTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
+
+        $myTotals = $this->calculateTeamStats($myTeam);
+        $opponentTotals = $this->calculateTeamStats($opponentTeam);
+
+        return view('fantasy.main', [
+            'myTeam' => $myTeam,
+            'opponentTeam' => $opponentTeam,
+            'myTotals' => $myTotals,
+            'opponentTotals' => $opponentTotals
+        ]);
+    }
+
+    public function parseTeamPlayers($stats, $teamGames)
+    {
         $currentPlayer = array();
-        $myTeam = array();
-        $opponentTeam = array();
+        $teamPlayers = array();
 
         foreach ($stats as $stat)
         {
@@ -58,12 +77,7 @@ class FantasyController extends Controller
             {
                 if($currentPlayer[3] !== '--')
                 {
-                    if(sizeOf($myTeam) < 13)
-                    {
-                        array_push($myTeam, $currentPlayer);
-                    } else {
-                        array_push($opponentTeam, $currentPlayer);
-                    }
+                    array_push($teamPlayers, $currentPlayer);
                 }
                 $currentPlayer = array();
             }
@@ -75,18 +89,7 @@ class FantasyController extends Controller
             }
         }
 
-        usort($myTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
-        usort($opponentTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
-
-        $myTotals = $this->calculateTeamStats($myTeam);
-        $opponentTotals = $this->calculateTeamStats($opponentTeam);
-
-        return view('fantasy.main', [
-            'myTeam' => $myTeam,
-            'opponentTeam' => $opponentTeam,
-            'myTotals' => $myTotals,
-            'opponentTotals' => $opponentTotals
-        ]);
+        return $teamPlayers;
     }
 
     public function isPosition($string)

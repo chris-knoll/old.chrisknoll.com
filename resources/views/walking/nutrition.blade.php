@@ -51,7 +51,7 @@
             }
         </style>
 
-<div class="col-sm-3" id="terms">
+<div class="col-sm-5" id="terms">
 	<dl>
 		<dt>Adequate Intakes (AIs)</dt>
 		<dd>Best estimates of nutritional needs.</dd>
@@ -152,7 +152,7 @@
 	</dl>
 </div>
 
-<div class="col-sm-9" id="main-study">
+<div class="col-sm-7" id="main-study">
 	<h3>How Important is Nutrition?</h3>
 	<p>The nutritional choices you make during college can have both immediate and lasting effects on your health.  Thousands of studies associate what we eat with chronic diseases such as diabetes, heart disease, hypertension, stroke, osteoporosis, and many types of cancer.</p>
 
