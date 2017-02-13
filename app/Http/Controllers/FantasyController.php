@@ -14,14 +14,23 @@ class FantasyController extends Controller
         $opponentAverages = preg_split('/[^\\S ]+/', $request->input('opponent-team-stats'));
         //print_r($stats);
 
-        $myTeam = $this->parseTeamPlayers($myAverages, $teamGames);
-        $opponentTeam = $this->parseTeamPlayers($opponentAverages, $teamGames);
+        $myTeam = null;
+        $myTotals = null;
+        if (isset($myAverages[1]))
+        {
+            $myTeam = $this->parseTeamPlayers($myAverages, $teamGames);
+            usort($myTeam, function (array $a, array $b) { return $b[20] - $a[20]; });
+            $myTotals = $this->calculateTeamStats($myTeam);
+        }
 
-        usort($myTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
-        usort($opponentTeam, function (array $a, array $b) { return $b[17] - $a[17]; });
-
-        $myTotals = $this->calculateTeamStats($myTeam);
-        $opponentTotals = $this->calculateTeamStats($opponentTeam);
+        $opponentTeam = null;
+        $opponentTotals = null;
+        if (isset($opponentAverages[1]))
+        {
+            $opponentTeam = $this->parseTeamPlayers($opponentAverages, $teamGames);
+            usort($opponentTeam, function (array $a, array $b) { return $b[20] - $a[20]; });
+            $opponentTotals = $this->calculateTeamStats($opponentTeam);
+        }
 
         return view('fantasy.main', [
             'myTeam' => $myTeam,
@@ -38,28 +47,41 @@ class FantasyController extends Controller
 
         foreach ($stats as $stat)
         {
+            // Ignore positions and Free Agent status (FA / WA)
+            if ($this->isPosition($stat) ||
+                substr($stat, 0, 2) === 'FA' ||
+                substr($stat, 0, 2) === 'WA') 
+            {
+                // Ignore
+            }
             // Check if it's the player name
-            if (strlen($stat) > 10 &&
+            else if (strlen($stat) > 10 &&
                 strpos($stat, ',') !== false)
             {
+                // Reset current player if there's data
+                if (isset($currentPlayer[0]))
+                {
+                    $currentPlayer = array();
+                }
                 $player = explode(',', $stat);
                 array_push($currentPlayer, $player[0]);
 
                 $team = explode(' ', $player[1]);
                 array_push($currentPlayer, strtoupper($team[1]));
 
-                if (array_key_exists($currentPlayer[2], $teamGames))
+                if (isset ($currentPlayer[1]) && array_key_exists($currentPlayer[1], $teamGames))
                 {
-                    array_push($currentPlayer, $teamGames[$currentPlayer[2]]);
+                    array_push($currentPlayer, $teamGames[$currentPlayer[1]]);
                 }
             }
             // Check if stat is FTM/FTA or FGM/FGA and split it
-            else if (strpos($stat, '/') !== false)
+            else if (strpos($stat, '/') !== false && 
+                    (strpos($stat, '.') !== false))
             {
                 $madeAttemptArray = explode('/', $stat);
                 // Need to multiply attempts and makes by games played
-                array_push($currentPlayer, $madeAttemptArray[0] * $currentPlayer[3]);
-                array_push($currentPlayer, $madeAttemptArray[1] * $currentPlayer[3]);
+                array_push($currentPlayer, $madeAttemptArray[0] * $currentPlayer[2]);
+                array_push($currentPlayer, $madeAttemptArray[1] * $currentPlayer[2]);
             }
             // Check if this is the upcoming game - throw it away
             else if ($this->isUpcomingGame($stat))
@@ -67,37 +89,53 @@ class FantasyController extends Controller
                 // Ignore current stat AND remove the previous one as it's the opponent they're playing
                 array_pop($currentPlayer);
             }
-            else if (sizeOf($currentPlayer) > 10 && 
-                    sizeOf($currentPlayer) < 18)
+            else if (sizeOf($currentPlayer) > 9 && 
+                    sizeOf($currentPlayer) < 17)
             {
                 // These are our calculating stats so multiply by the number of games this player plays
-                array_push($currentPlayer, $stat * $currentPlayer[3]);
+                array_push($currentPlayer, $stat * $currentPlayer[2]);
             }
             // Only need 18 stats
-            else if (sizeOf($currentPlayer) < 21)
+            else if (sizeOf($currentPlayer) < 20)
             {
                 // Push it onto the array
                 array_push($currentPlayer, $stat);
             }
 
-            if (sizeOf($currentPlayer) == 21 &&
-                $this->isPosition($currentPlayer[0]))
+            if (sizeOf($currentPlayer) == 20)
             {
-                if($currentPlayer[3] !== '--')
+
+                if(array_key_exists($currentPlayer[1], $teamGames))
                 {
+                    $currentPlayer = $this->calculateWeeklyRating($currentPlayer);
                     array_push($teamPlayers, $currentPlayer);
                 }
                 $currentPlayer = array();
             }
 
-            if ($this->isPosition($stat))
-            {
-                $currentPlayer = array();
-                array_push($currentPlayer, $stat);
-            }
+            // if ($this->isPosition($stat))
+            // {
+            //     $currentPlayer = array();
+            //     array_push($currentPlayer, $stat);
+            // }
         }
 
         return $teamPlayers;
+    }
+
+    public function calculateWeeklyRating($player)
+    {
+        $rating = 
+            ($player[10] * 11.96) + // 3PM
+            ($player[11] * 2.68) + // REB
+            ($player[12] * 4.73) + // AST
+            ($player[13] * 15.36) + // STL
+            ($player[14] * 24.33) // BLK
+            - ($player[15] * 8.14) + // TO
+            ($player[16] * 11.96);// PTS
+
+        array_push($player, round($rating));
+        return $player;
     }
 
     public function isPosition($string)
@@ -189,25 +227,27 @@ class FantasyController extends Controller
 
         foreach($teamStats as $player)
         {
-            $totalStats['GAMES'] += $player[3];
-            $totalStats['MPG'] += $player[4];
-            $totalStats['FGM'] += $player[5];
-            $totalStats['FGA'] += $player[6];
+            $totalStats['GAMES'] += $player[2];
+            $totalStats['MPG'] += $player[3];
+            $totalStats['FGM'] += $player[4];
+            $totalStats['FGA'] += $player[5];
             // Don't sum field goal percentage
-            $totalStats['FTM'] += $player[8];
-            $totalStats['FTA'] += $player[9];
+            $totalStats['FTM'] += $player[6];
+            $totalStats['FTA'] += $player[7];
             // Don't sum free throw percentage
-            $totalStats['3PM'] += $player[11];
-            $totalStats['REB'] += $player[12];
-            $totalStats['AST'] += $player[13];
-            $totalStats['STL'] += $player[14];
-            $totalStats['BLK'] += $player[15];
-            $totalStats['TO'] += $player[16];
-            $totalStats['PTS'] += $player[17];
+            $totalStats['3PM'] += $player[10];
+            $totalStats['REB'] += $player[11];
+            $totalStats['AST'] += $player[12];
+            $totalStats['STL'] += $player[13];
+            $totalStats['BLK'] += $player[14];
+            $totalStats['TO'] += $player[15];
+            $totalStats['PTS'] += $player[16];
         }
 
-        $totalStats['FGP'] = number_format($totalStats['FGM'] / $totalStats['FGA'], 3);
-        $totalStats['FTP'] = number_format($totalStats['FTM'] / $totalStats['FTA'], 3);
+        if ($totalStats['FGA'] !== 0)
+            $totalStats['FGP'] = number_format($totalStats['FGM'] / $totalStats['FGA'], 3);
+        if ($totalStats['FTA'] !== 0)
+            $totalStats['FTP'] = number_format($totalStats['FTM'] / $totalStats['FTA'], 3);
 
         return $totalStats;
     }

@@ -22,12 +22,13 @@
                 <th>BLK</th>
                 <th>TO</th>
                 <th>PTS</th>
+                <th>Rating</th>
             </thead>
             <tbody>
                 @foreach ($myTeam as $player)
                     <tr>
                     @for ($i = 0; $i < sizeOf($player); $i++)
-                        @if ($i != 0 && $i < 18)
+                        @if ($i < 17 || $i == 20)
                             <td>{{ $player[$i] }}</td>
                         @endif 
                     @endfor
@@ -100,14 +101,16 @@
                 <th>BLK</th>
                 <th>TO</th>
                 <th>PTS</th>
+                <th>Rating</th>
             </thead>
             <tbody>
                 @foreach ($opponentTeam as $player)
                     <tr>
                     @for ($i = 0; $i < sizeOf($player); $i++)
-                        @if ($i != 0 && $i < 18)
+                        @if ($i < 17 || $i == 20)
                             <td>{{ $player[$i] }}</td>
                         @endif 
+
                     @endfor
                     </tr>
                 @endforeach
