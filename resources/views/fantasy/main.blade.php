@@ -2,16 +2,18 @@
 
 @section('content')
     @if (isset($myTeam))
-    <div class="row">
-        <table class="table table-hover col-xs-12">
+    <div class="row col-xs-12">
+        <table class="table table-hover table-condensed col-xs-12">
             <thead>
                 <th>Player</th>
                 <th>Team</th>
                 <th>Games</th>
                 <th>MPG</th>
-                <th>FGM/FGA</th>
+                <th>FGM</th>
+                <th>FGA</th>
                 <th>FG%</th>
-                <th>FTM/FTA</th>
+                <th>FTM</th>
+                <th>FTA</th>
                 <th>FT%</th>
                 <th>3PM</th>
                 <th>REB</th>
@@ -25,7 +27,7 @@
                 @foreach ($myTeam as $player)
                     <tr>
                     @for ($i = 0; $i < sizeOf($player); $i++)
-                        @if ($i != 0 && $i < 16)
+                        @if ($i != 0 && $i < 18)
                             <td>{{ $player[$i] }}</td>
                         @endif 
                     @endfor
@@ -38,8 +40,14 @@
         <tr>
             <th>Totals:</th>
             <th></th>
-            <th>{{ $myTotals['GAMES'] }}</th>
-            <th colspan="5"></th>
+            <td>{{ $myTotals['GAMES'] }}</td>
+            <td>{{ $myTotals['MPG'] }}</td>
+            <td>{{ $myTotals['FGM'] }}</td>
+            <td>{{ $myTotals['FGA'] }}</td>
+            <th>{{ $myTotals['FGP'] }}</th>
+            <td>{{ $myTotals['FTM'] }}</td>
+            <td>{{ $myTotals['FTA'] }}</td>
+            <th>{{ $myTotals['FTP'] }}</th>
             <th>{{ $myTotals['3PM'] }}</th>
             <th>{{ $myTotals['REB'] }}</th>
             <th>{{ $myTotals['AST'] }}</th>
@@ -54,8 +62,14 @@
         <tr>
             <th>Totals:</th>
             <th></th>
-            <th>{{ $opponentTotals['GAMES'] }}</th>
-            <th colspan="5"></th>
+            <td>{{ $opponentTotals['GAMES'] }}</td>
+            <td>{{ $opponentTotals['MPG'] }}</td>
+            <td>{{ $opponentTotals['FGM'] }}</td>
+            <td>{{ $opponentTotals['FGA'] }}</td>
+            <th>{{ $opponentTotals['FGP'] }}</th>
+            <td>{{ $opponentTotals['FTM'] }}</td>
+            <td>{{ $opponentTotals['FTA'] }}</td>
+            <th>{{ $opponentTotals['FTP'] }}</th>
             <th>{{ $opponentTotals['3PM'] }}</th>
             <th>{{ $opponentTotals['REB'] }}</th>
             <th>{{ $opponentTotals['AST'] }}</th>
@@ -73,9 +87,11 @@
                 <th>Team</th>
                 <th>Games</th>
                 <th>MPG</th>
-                <th>FGM/FGA</th>
+                <th>FGM</th>
+                <th>FGA</th>
                 <th>FG%</th>
-                <th>FTM/FTA</th>
+                <th>FTM</th>
+                <th>FTA</th>
                 <th>FT%</th>
                 <th>3PM</th>
                 <th>REB</th>
@@ -89,7 +105,7 @@
                 @foreach ($opponentTeam as $player)
                     <tr>
                     @for ($i = 0; $i < sizeOf($player); $i++)
-                        @if ($i != 0 && $i < 16)
+                        @if ($i != 0 && $i < 18)
                             <td>{{ $player[$i] }}</td>
                         @endif 
                     @endfor

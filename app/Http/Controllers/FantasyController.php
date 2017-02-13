@@ -53,26 +53,34 @@ class FantasyController extends Controller
                     array_push($currentPlayer, $teamGames[$currentPlayer[2]]);
                 }
             }
+            // Check if stat is FTM/FTA or FGM/FGA and split it
+            else if (strpos($stat, '/') !== false)
+            {
+                $madeAttemptArray = explode('/', $stat);
+                // Need to multiply attempts and makes by games played
+                array_push($currentPlayer, $madeAttemptArray[0] * $currentPlayer[3]);
+                array_push($currentPlayer, $madeAttemptArray[1] * $currentPlayer[3]);
+            }
             // Check if this is the upcoming game - throw it away
             else if ($this->isUpcomingGame($stat))
             {
                 // Ignore current stat AND remove the previous one as it's the opponent they're playing
                 array_pop($currentPlayer);
             }
-            else if (sizeOf($currentPlayer) > 8 && 
-                    sizeOf($currentPlayer) < 16)
+            else if (sizeOf($currentPlayer) > 10 && 
+                    sizeOf($currentPlayer) < 18)
             {
                 // These are our calculating stats so multiply by the number of games this player plays
                 array_push($currentPlayer, $stat * $currentPlayer[3]);
             }
             // Only need 18 stats
-            else if (sizeOf($currentPlayer) < 19)
+            else if (sizeOf($currentPlayer) < 21)
             {
                 // Push it onto the array
                 array_push($currentPlayer, $stat);
             }
 
-            if (sizeOf($currentPlayer) == 19 &&
+            if (sizeOf($currentPlayer) == 21 &&
                 $this->isPosition($currentPlayer[0]))
             {
                 if($currentPlayer[3] !== '--')
@@ -163,6 +171,13 @@ class FantasyController extends Controller
     {
         $totalStats = array(
             'GAMES' => 0,
+            'MPG' => 0,
+            'FGM' => 0,
+            'FGA' => 0,
+            'FGP' => 0,
+            'FTM' => 0,
+            'FTA' => 0,
+            'FTP' => 0,
             '3PM' => 0,
             'REB' => 0,
             'AST' => 0,
@@ -175,14 +190,24 @@ class FantasyController extends Controller
         foreach($teamStats as $player)
         {
             $totalStats['GAMES'] += $player[3];
-            $totalStats['3PM'] += $player[9];
-            $totalStats['REB'] += $player[10];
-            $totalStats['AST'] += $player[11];
-            $totalStats['STL'] += $player[12];
-            $totalStats['BLK'] += $player[13];
-            $totalStats['TO'] += $player[14];
-            $totalStats['PTS'] += $player[15];
+            $totalStats['MPG'] += $player[4];
+            $totalStats['FGM'] += $player[5];
+            $totalStats['FGA'] += $player[6];
+            // Don't sum field goal percentage
+            $totalStats['FTM'] += $player[8];
+            $totalStats['FTA'] += $player[9];
+            // Don't sum free throw percentage
+            $totalStats['3PM'] += $player[11];
+            $totalStats['REB'] += $player[12];
+            $totalStats['AST'] += $player[13];
+            $totalStats['STL'] += $player[14];
+            $totalStats['BLK'] += $player[15];
+            $totalStats['TO'] += $player[16];
+            $totalStats['PTS'] += $player[17];
         }
+
+        $totalStats['FGP'] = number_format($totalStats['FGM'] / $totalStats['FGA'], 3);
+        $totalStats['FTP'] = number_format($totalStats['FTM'] / $totalStats['FTA'], 3);
 
         return $totalStats;
     }
