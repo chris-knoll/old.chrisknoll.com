@@ -196,7 +196,7 @@ class FantasyController extends Controller
             'PHO' => $rawGames[23],
             'POR' => $rawGames[24],
             'SAC' => $rawGames[25],
-            'SAS' => $rawGames[26],
+            'SA' => $rawGames[26],
             'TOR' => $rawGames[27],
             'UTA' => $rawGames[28],
             'WSH' => $rawGames[29]
@@ -232,8 +232,8 @@ class FantasyController extends Controller
             $totalStats['FGM'] += $player[4];
             $totalStats['FGA'] += $player[5];
             // Don't sum field goal percentage
-            $totalStats['FTM'] += $player[6];
-            $totalStats['FTA'] += $player[7];
+            $totalStats['FTM'] += $player[7];
+            $totalStats['FTA'] += $player[8];
             // Don't sum free throw percentage
             $totalStats['3PM'] += $player[10];
             $totalStats['REB'] += $player[11];
