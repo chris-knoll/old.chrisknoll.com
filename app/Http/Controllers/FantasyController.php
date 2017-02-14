@@ -47,8 +47,12 @@ class FantasyController extends Controller
 
         foreach ($stats as $stat)
         {
+            if (ctype_upper($stat))
+            {
+                // do nothing
+            }
             // Ignore positions and Free Agent status (FA / WA)
-            if ($this->isPosition($stat) ||
+            else if ($this->isPosition($stat) ||
                 substr($stat, 0, 2) === 'FA' ||
                 substr($stat, 0, 2) === 'WA') 
             {

@@ -14,7 +14,7 @@
         <label for="exampleTextarea">NBA Team Games Schedule (Copy one row of numbers only from 
             <a href="https://basketballmonster.com/ScheduleGrid.aspx" target="_blank">here</a>)
         </label>
-        <textarea class="form-control" id="games-input" name="games" rows="1" required></textarea>
+        <textarea class="form-control" id="games-input" name="games" rows="1" required>1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1&#09;1</textarea>
     </div>
 
     <div class="form-group text-center">
