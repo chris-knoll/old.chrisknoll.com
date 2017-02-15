@@ -30,3 +30,6 @@ Route::get('/fantasy', function() { return view('fantasy.main'); })
     ->name('fantasy');
 Route::post('/fantasy', 'FantasyController@calculateWeeklyStats')
     ->name('fantasy.calculate');
+
+Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/{slug}', 'BlogController@showPost');
