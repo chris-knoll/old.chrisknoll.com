@@ -5,17 +5,25 @@
     <h1>{{ config('blog.title') }}</h1>
     <h5>Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</h5>
     <hr>
-    <ul>
+
       @foreach ($posts as $post)
-        <li>
-          <a href="/blog/{{ $post->slug }}">{{ $post->title }}</a>
-          <em>({{ $post->published_at->format('M jS Y g:ia') }})</em>
-          <p>
-            {{ str_limit($post->content) }}
-          </p>
-        </li>
+      <div class="panel panel-primary">
+        <div class="col-xs-12 panel-heading">
+          <div class="col-xs-9">
+            <h3 class="panel-title"><a href="/blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
+          </div>
+          <div class="col-xs-3 text-right">
+            <em>({{ $post->published_at->format('M jS Y g:ia') }})</em>
+          </div>
+        </div>
+        <div class="panel-body">
+            <p>
+              {{ str_limit($post->content, 500) }}
+            </p>
+        </div>
+      </div>
       @endforeach
-    </ul>
+
     <hr>
     {!! $posts->render() !!}
   </div>
