@@ -23,6 +23,8 @@ Route::get('/linux/final', function() { return view('linux.final'); })
 
 Route::get('/nutrition', function() { return view('walking.nutrition'); })
     ->name('fitness');
+Route::get('/cvd', function() { return view('walking.cvd'); })
+    ->name('cvd');
 Route::get('/git', function() { return view('git'); })
     ->name('git');
 
