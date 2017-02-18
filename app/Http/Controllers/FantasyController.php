@@ -133,16 +133,17 @@ class FantasyController extends Controller
     public function calculateWeeklyRating($player)
     {
         $rating = 
-            ($player[10] * 11.96) + // 3PM
-            ($player[11] * 2.68) + // REB
-            ($player[12] * 4.73) + // AST
-            ($player[13] * 15.36) + // STL
-            ($player[14] * 24.33) // BLK
+            ($player[10] * 11.96) +  // 3PM
+            ($player[11] * 2.68) +   // REB
+            ($player[12] * 4.73) +   // AST
+            ($player[13] * 15.36) +  // STL
+            ($player[14] * 24.33)    // BLK
             - ($player[15] * 8.14) + // TO
-            ($player[16] * 11.96);// PTS
+            ($player[16]);           // PTS
 
         array_push($player, round($rating));
         return $player;
+        
     }
 
     public function isPosition($string)

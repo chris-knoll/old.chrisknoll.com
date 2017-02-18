@@ -39,45 +39,147 @@
 
     @if (isset($myTotals))
         <tr>
-            <th>Totals:</th>
-            <th></th>
+            <td class="text-right">Totals:</td>
+            <td></td>
             <td>{{ $myTotals['GAMES'] }}</td>
             <td>{{ $myTotals['MPG'] }}</td>
             <td>{{ $myTotals['FGM'] }}</td>
             <td>{{ $myTotals['FGA'] }}</td>
-            <th>{{ $myTotals['FGP'] }}</th>
+            <td
+                @if ($myTotals['FGP'] > $opponentTotals['FGP'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $myTotals['FGP'] }}</td>
             <td>{{ $myTotals['FTM'] }}</td>
             <td>{{ $myTotals['FTA'] }}</td>
-            <th>{{ $myTotals['FTP'] }}</th>
-            <th>{{ $myTotals['3PM'] }}</th>
-            <th>{{ $myTotals['REB'] }}</th>
-            <th>{{ $myTotals['AST'] }}</th>
-            <th>{{ $myTotals['STL'] }}</th>
-            <th>{{ $myTotals['BLK'] }}</th>
-            <th>{{ $myTotals['TO'] }}</th>
-            <th>{{ $myTotals['PTS'] }}</th>
+            <td
+                @if ($myTotals['FTP'] > $opponentTotals['FTP'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $myTotals['FTP'] }}</td>
+            <td
+                @if ($myTotals['3PM'] > $opponentTotals['3PM'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $myTotals['3PM'] }}</td>
+            <td
+                @if ($myTotals['REB'] > $opponentTotals['REB'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif>{{ $myTotals['REB'] }}</td>
+            <td
+                @if ($myTotals['AST'] > $opponentTotals['AST'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif>{{ $myTotals['AST'] }}</td>
+            <td
+                @if ($myTotals['STL'] > $opponentTotals['STL'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif>{{ $myTotals['STL'] }}</td>
+            <td
+                @if ($myTotals['BLK'] > $opponentTotals['BLK'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif>{{ $myTotals['BLK'] }}</td>
+            <td
+                @if ($myTotals['TO'] < $opponentTotals['TO'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif>{{ $myTotals['TO'] }}</td>
+            <td
+                @if ($myTotals['PTS'] > $opponentTotals['PTS'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif>{{ $myTotals['PTS'] }}</td>
         </tr>
     @endif
 
     @if (isset($opponentTotals))
         <tr>
-            <th>Totals:</th>
-            <th></th>
+            <td class="text-right">Totals:</td>
+            <td></td>
             <td>{{ $opponentTotals['GAMES'] }}</td>
             <td>{{ $opponentTotals['MPG'] }}</td>
             <td>{{ $opponentTotals['FGM'] }}</td>
             <td>{{ $opponentTotals['FGA'] }}</td>
-            <th>{{ $opponentTotals['FGP'] }}</th>
+            <td
+                @if ($myTotals['FGP'] < $opponentTotals['FGP'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['FGP'] }}</td>
             <td>{{ $opponentTotals['FTM'] }}</td>
             <td>{{ $opponentTotals['FTA'] }}</td>
-            <th>{{ $opponentTotals['FTP'] }}</th>
-            <th>{{ $opponentTotals['3PM'] }}</th>
-            <th>{{ $opponentTotals['REB'] }}</th>
-            <th>{{ $opponentTotals['AST'] }}</th>
-            <th>{{ $opponentTotals['STL'] }}</th>
-            <th>{{ $opponentTotals['BLK'] }}</th>
-            <th>{{ $opponentTotals['TO'] }}</th>
-            <th>{{ $opponentTotals['PTS'] }}</th>
+            <td
+                @if ($myTotals['FTP'] < $opponentTotals['FTP'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['FTP'] }}</td>
+            <td
+                @if ($myTotals['3PM'] < $opponentTotals['3PM'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['3PM'] }}</td>
+            <td
+                @if ($myTotals['REB'] < $opponentTotals['REB'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['REB'] }}</td>
+            <td
+                @if ($myTotals['AST'] < $opponentTotals['AST'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['AST'] }}</td>
+            <td
+                @if ($myTotals['STL'] < $opponentTotals['STL'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['STL'] }}</td>
+            <td
+                @if ($myTotals['BLK'] < $opponentTotals['BLK'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['BLK'] }}</td>
+            <td
+                @if ($myTotals['TO'] > $opponentTotals['TO'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['TO'] }}</td>
+            <td
+                @if ($myTotals['PTS'] < $opponentTotals['PTS'])
+                    class="text-primary"
+                @else
+                    class="text-danger"
+                @endif
+            >{{ $opponentTotals['PTS'] }}</td>
         </tr>
     @endif
 
