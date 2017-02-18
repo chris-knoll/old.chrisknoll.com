@@ -88,7 +88,7 @@ class FantasyController extends Controller
                 array_push($currentPlayer, $madeAttemptArray[1] * $currentPlayer[2]);
             }
             // Check if this is the upcoming game - throw it away
-            else if ($this->isUpcomingGame($stat))
+            else if ($this->isGame($stat))
             {
                 // Ignore current stat AND remove the previous one as it's the opponent they're playing
                 array_pop($currentPlayer);
@@ -160,9 +160,11 @@ class FantasyController extends Controller
         }
     }
 
-    public function isUpcomingGame($string)
+    public function isGame($string)
     {
-        if (strpos($string, ':') !== false)
+        if (strpos($string, ':') !== false ||
+            starts_with($string, 'W ') ||
+            starts_with($string, 'L '))
         {
             return true;
         } else {
