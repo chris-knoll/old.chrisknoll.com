@@ -2,12 +2,6 @@
 
 @section('content')
 
-<div class="content">
-    <div class="title m-b-md">
-        Chris Knoll
-    </div>
-</div>
-
-@include('reference.git')
+@include('welcomemd')
 
 @endsection

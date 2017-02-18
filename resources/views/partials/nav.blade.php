@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ route('home') }}">
-                Chris Knoll
+                About
             </a>
         </div>
 
@@ -22,15 +22,15 @@
                 <li><a href="#">Projects</a></li>
                 <li><a href="https://github.com/chris-knoll" target="_blank">GitHub</a></li>
                 <li><a href="http://linkedin.com/in/chrisknoll3" target="_blank">LinkedIn</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Reference
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reference
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/reference/git/md">Git</a></li>
+                      <li><a href="/reference/markdown/md">Markdown</a></li>
+                      <li><a href="/reference/java/md">Java</a></li>
+                      <li><a href="/reference/php/md">PHP</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
