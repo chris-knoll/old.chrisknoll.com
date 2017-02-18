@@ -97,7 +97,10 @@ class FantasyController extends Controller
                     sizeOf($currentPlayer) < 17)
             {
                 // These are our calculating stats so multiply by the number of games this player plays
-                array_push($currentPlayer, $stat * $currentPlayer[2]);
+                if (is_numeric($stat) && is_numeric($currentPlayer[2])) 
+                {
+                    array_push($currentPlayer, $stat * $currentPlayer[2]);
+                }
             }
             // Only need 18 stats
             else if (sizeOf($currentPlayer) < 20)
