@@ -15,6 +15,11 @@ class BlogController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(config('blog.posts_per_page'));
 
+        // foreach ($posts as $post)
+        // {
+        //     $post->content = Markdown::convertToHtml($post->content);
+        // }
+
         return view('blog.index', compact('posts'));
     }
 

@@ -35,3 +35,5 @@ Route::post('/fantasy', 'FantasyController@calculateWeeklyStats')
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@showPost');
+
+Route::get('{folder}/{view}/md', 'MarkdownPagesController@markdownView');

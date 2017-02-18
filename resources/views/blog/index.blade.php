@@ -18,7 +18,7 @@
         </div>
         <div class="panel-body">
             <p>
-              {{ str_limit($post->content, 500) }}
+              {!! str_limit($post->content, 500) !!}
             </p>
         </div>
       </div>

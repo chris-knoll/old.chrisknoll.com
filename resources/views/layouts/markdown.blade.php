@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-
-<h3>Git</h3>
-
+    @include($markdownViewName)
 @endsection

@@ -8,4 +8,6 @@
     </div>
 </div>
 
+@include('reference.git')
+
 @endsection
