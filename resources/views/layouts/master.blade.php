@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ URL::to('css/app.css') }}">
 
     {{--Title--}}
-    <title>chrisknoll.com</title>
+    <title>Chris Knoll</title>
 </head>
 <body>
     {{--Nav--}}
