@@ -30,6 +30,7 @@
                       <li><a href="/reference/markdown/md">Markdown</a></li>
                       <li><a href="/reference/java/md">Java</a></li>
                       <li><a href="/reference/php/md">PHP</a></li>
+                      <li><a href="/reference/sublimetext/md">Sublime Text</a></li>
                     </ul>
                 </li>
             </ul>
