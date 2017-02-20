@@ -24,6 +24,3 @@ I am currently looking for an internship or full-time position in software devel
 
 If you want to learn more about me, I encourage you to check out my blog, LinkedIn, and GitHub.
 
-- [Blog](/blog)
-- [LinkedIn](https://www.linkedin.com/in/chrisknoll3/)
-- [GitHub](https://github.com/chris-knoll)
