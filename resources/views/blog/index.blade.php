@@ -9,11 +9,9 @@
       @foreach ($posts as $post)
         <div class="col-xs-12">
             <h3><a href="/blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
-            <p><em>({{ $post->published_at->format('M jS Y g:ia') }})</em></p>
-            <div class="col-xs-10 col-offset-1">
-              {!! str_limit(Markdown::convertToHtml($post->content), 500) !!}
+            <em class="text-right">({{ $post->published_at->format('M jS Y g:ia') }})</em>
+            <p>{!! str_limit(Markdown::convertToHtml($post->content), 500) !!}</p>
             <hr>
-            </div>
         </div>
         
       @endforeach
