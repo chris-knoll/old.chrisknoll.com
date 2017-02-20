@@ -3,7 +3,8 @@
 @section('content')
   <div class="container">
     <h1>{{ config('blog.title') }}</h1>
-    <h5>Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</h5>
+    <p>No, seriously.</p>
+    <h5 class="text-center">Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}</h5>
     <hr>
 
       @foreach ($posts as $post)
@@ -16,7 +17,7 @@
         
       @endforeach
 
-    {!! $posts->render() !!}
+    <div class="col-xs-12 text-center">{!! $posts->render() !!}</div>
   </div>
 
 @endsection

@@ -5,6 +5,10 @@
 <h1>Projects</h1>
 
 <div class="col-xs-12 col-md-6">
+    <h3>Personal Projects</h3>
+
+    <h4><a href="{{ route('fantasy') }}">Fantasy Basketball Statistic Calculator / Rater</a></h4>
+
     <h3>Agile / Scrum Team Projects</h3>
     <h4>Ricardo Beverly Hills Warranty Claim System</h4>
 

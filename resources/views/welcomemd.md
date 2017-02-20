@@ -1,4 +1,4 @@
-### About Me
+# About Me
 
 I am a Bachelor student studying Software Development at Green River College nearly finished with my degree.  My intent for this site is to act as a portfolio to showcase my work, show what I'm learning through my blog, and provide a central location for notes and reference sheets to help with my studies.
 
