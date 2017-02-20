@@ -13,6 +13,8 @@
 
 Route::get('/', function () { return view('welcome'); })
     ->name('home');
+Route::get('/projects', function() { return view('projects'); })
+    ->name('projects');
 
 Route::get('/linux', 'LinuxController@index')
     ->name('linux');

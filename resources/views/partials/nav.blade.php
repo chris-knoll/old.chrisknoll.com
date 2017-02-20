@@ -19,7 +19,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ route('blog') }}">Blog</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="{{ route('projects') }}">Projects</a></li>
                 <li><a href="https://github.com/chris-knoll" target="_blank">GitHub</a></li>
                 <li><a href="http://linkedin.com/in/chrisknoll3" target="_blank">LinkedIn</a></li>
                 <li class="dropdown">
