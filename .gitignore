@@ -2,6 +2,7 @@
 /node_modules
 /public/storage
 /vendor
+/resources/views/personalposts
 .env
 Homestead.json
 Homestead.yaml
