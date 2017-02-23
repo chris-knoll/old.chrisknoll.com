@@ -49,9 +49,8 @@
             <button class="btn btn-sm btn-danger" name="resetStats">Reset</button>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 col-md-offset-2 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 col-md-offset-2 text-center">
             <label for="weight3PM">3PM</label>
-            <br />
             <select class="custom-select" name="weight3PM">
                 <option value="0">Ignore</option>
                 <option value="1" selected>100%</option>
@@ -59,9 +58,8 @@
             </select>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 text-center">
             <label for="weightREB">REB</label>
-            <br />
             <select class="custom-select" name="weightREB">
                 <option value="0">Ignore</option>
                 <option value="1" selected>100%</option>
@@ -69,7 +67,7 @@
             </select>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 text-center">
             <label for="weightAST">AST</label>
             <select class="custom-select" name="weightAST">
                 <option value="0">Ignore</option>
@@ -78,7 +76,7 @@
             </select>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 text-center">
             <label for="weightSTL">STL</label>
             <select class="custom-select" name="weightSTL">
                 <option value="0">Ignore</option>
@@ -87,7 +85,7 @@
             </select>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 text-center">
             <label for="weightBLK">BLK</label>
             <select class="custom-select" name="weightBLK">
                 <option value="0">Ignore</option>
@@ -96,7 +94,7 @@
             </select>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 text-center">
             <label for="weightTO">TO</label>
             <select class="custom-select" name="weightTO">
                 <option value="0">Ignore</option>
@@ -105,7 +103,7 @@
             </select>
         </div>
 
-        <div class="form-group col-xs-2 col-md-1 text-center">
+        <div class="form-group col-xs-3 col-sm-2 col-md-1 text-center">
             <label for="weightPTS">PTS</label>
             <select class="custom-select" name="weightPTS">
                 <option value="0">Ignore</option>
