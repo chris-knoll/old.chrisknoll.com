@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./fantasy_basketball');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

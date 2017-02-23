@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+<h1>Fantasy Basketball Stat Calculator / Player Rater</h1>
+
     @if (isset($myTeam))
     <div class="row col-xs-12">
         <table class="table table-hover table-condensed col-xs-12">
@@ -48,7 +50,7 @@
             <td
                 @if ($myTotals['FGP'] > $opponentTotals['FGP'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['FGP'] < $opponentTotals['FGP'])
                     class="text-danger"
                 @endif
             >{{ $myTotals['FGP'] }}</td>
@@ -57,51 +59,51 @@
             <td
                 @if ($myTotals['FTP'] > $opponentTotals['FTP'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['FTP'] < $opponentTotals['FTP'])
                     class="text-danger"
                 @endif
             >{{ $myTotals['FTP'] }}</td>
             <td
                 @if ($myTotals['3PM'] > $opponentTotals['3PM'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['3PM'] < $opponentTotals['3PM'])
                     class="text-danger"
                 @endif
             >{{ $myTotals['3PM'] }}</td>
             <td
                 @if ($myTotals['REB'] > $opponentTotals['REB'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['REB'] < $opponentTotals['REB'])
                     class="text-danger"
                 @endif>{{ $myTotals['REB'] }}</td>
             <td
                 @if ($myTotals['AST'] > $opponentTotals['AST'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['AST'] < $opponentTotals['AST'])
                     class="text-danger"
                 @endif>{{ $myTotals['AST'] }}</td>
             <td
                 @if ($myTotals['STL'] > $opponentTotals['STL'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['STL'] < $opponentTotals['STL'])
                     class="text-danger"
                 @endif>{{ $myTotals['STL'] }}</td>
             <td
                 @if ($myTotals['BLK'] > $opponentTotals['BLK'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['BLK'] < $opponentTotals['BLK'])
                     class="text-danger"
                 @endif>{{ $myTotals['BLK'] }}</td>
             <td
                 @if ($myTotals['TO'] < $opponentTotals['TO'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['TO'] > $opponentTotals['TO'])
                     class="text-danger"
                 @endif>{{ $myTotals['TO'] }}</td>
             <td
                 @if ($myTotals['PTS'] > $opponentTotals['PTS'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['PTS'] < $opponentTotals['PTS'])
                     class="text-danger"
                 @endif>{{ $myTotals['PTS'] }}</td>
         </tr>
@@ -118,7 +120,7 @@
             <td
                 @if ($myTotals['FGP'] < $opponentTotals['FGP'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['FGP'] > $opponentTotals['FGP'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['FGP'] }}</td>
@@ -127,56 +129,56 @@
             <td
                 @if ($myTotals['FTP'] < $opponentTotals['FTP'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['FTP'] > $opponentTotals['FTP'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['FTP'] }}</td>
             <td
                 @if ($myTotals['3PM'] < $opponentTotals['3PM'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['3PM'] > $opponentTotals['3PM'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['3PM'] }}</td>
             <td
                 @if ($myTotals['REB'] < $opponentTotals['REB'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['REB'] > $opponentTotals['REB'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['REB'] }}</td>
             <td
                 @if ($myTotals['AST'] < $opponentTotals['AST'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['AST'] > $opponentTotals['AST'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['AST'] }}</td>
             <td
                 @if ($myTotals['STL'] < $opponentTotals['STL'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['STL'] > $opponentTotals['STL'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['STL'] }}</td>
             <td
                 @if ($myTotals['BLK'] < $opponentTotals['BLK'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['BLK'] > $opponentTotals['BLK'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['BLK'] }}</td>
             <td
                 @if ($myTotals['TO'] > $opponentTotals['TO'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['TO'] < $opponentTotals['TO'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['TO'] }}</td>
             <td
                 @if ($myTotals['PTS'] < $opponentTotals['PTS'])
                     class="text-primary"
-                @else
+                @elseif ($myTotals['PTS'] > $opponentTotals['PTS'])
                     class="text-danger"
                 @endif
             >{{ $opponentTotals['PTS'] }}</td>
