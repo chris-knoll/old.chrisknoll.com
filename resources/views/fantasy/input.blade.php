@@ -43,6 +43,11 @@
             <label>Stat Weight Modifiers</label>
         </div>
 
+        <div class="col-xs-12 text-center">
+            <button class="btn btn-sm btn-secondary" name="ignoreAllStats">Ignore All</button>
+            <button class="btn btn-sm btn-danger" name="resetStats">Reset</button>
+        </div>
+
         <div class="form-group col-xs-2 col-md-1 col-md-offset-2 text-center">
             <label for="weight3PM">3PM</label>
             <br />

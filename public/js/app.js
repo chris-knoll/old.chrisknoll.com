@@ -12203,6 +12203,28 @@ document.fbForm.clearGames.onclick = function (event) {
     document.fbForm.games.value = "";
 };
 
+document.fbForm.ignoreAllStats.onclick = function (event) {
+    event.preventDefault();
+    document.fbForm.weight3PM.value = 0;
+    document.fbForm.weightREB.value = 0;
+    document.fbForm.weightAST.value = 0;
+    document.fbForm.weightSTL.value = 0;
+    document.fbForm.weightBLK.value = 0;
+    document.fbForm.weightTO.value = 0;
+    document.fbForm.weightPTS.value = 0;
+};
+
+document.fbForm.resetStats.onclick = function (event) {
+    event.preventDefault();
+    document.fbForm.weight3PM.value = 1;
+    document.fbForm.weightREB.value = 1;
+    document.fbForm.weightAST.value = 1;
+    document.fbForm.weightSTL.value = 1;
+    document.fbForm.weightBLK.value = 1;
+    document.fbForm.weightTO.value = 1;
+    document.fbForm.weightPTS.value = 1;
+};
+
 var playoffsRound1 = "8\t7\t8\t7\t7\t8\t7\t7\t7\t8\t7\t7\t7\t6\t6\t8\t8\t7\t6\t8\t7\t7\t8\t8\t8\t7\t7\t7\t7\t8";
 var playoffsRound2 = "7\t8\t7\t7\t8\t7\t7\t7\t7\t7\t6\t7\t9\t7\t7\t6\t8\t7\t7\t6\t6\t6\t7\t7\t8\t7\t7\t7\t7\t8";
 var playoffsRound3 = "7\t7\t6\t7\t6\t8\t8\t7\t7\t7\t7\t7\t5\t7\t8\t7\t7\t7\t7\t8\t8\t7\t7\t7\t6\t7\t8\t8\t7\t7";
