@@ -1,3 +1,4 @@
+<hr>
 <form name="fbForm" action="{{ route('fantasy.calculate') }}" method="post">
 
     <div class="form-group col-xs-6">
@@ -43,7 +44,7 @@
             <label>Stat Weight Modifiers</label>
         </div>
 
-        <div class="col-xs-12 text-center">
+        <div class="form-group col-xs-12 text-center">
             <button class="btn btn-sm btn-secondary" name="ignoreAllStats">Ignore All</button>
             <button class="btn btn-sm btn-danger" name="resetStats">Reset</button>
         </div>
@@ -114,8 +115,11 @@
         </div>
     </div>
 
+
+
     <div class="form-group text-center">
         <button type="submit" class="btn btn-primary">Calculate Stats</button>
+        <hr />
     </div>
     {{--Token--}}
     {{ csrf_field() }}
