@@ -7,6 +7,7 @@
     <div class="row col-xs-12">
         <table class="table table-hover table-condensed col-xs-12">
             <thead>
+                <th></th>
                 <th>Player</th>
                 <th>Team</th>
                 <th>Games</th>
@@ -27,11 +28,12 @@
                 <th>Rating</th>
             </thead>
             <tbody>
-                @foreach ($myTeam as $player)
+                @foreach ($myTeam as $indexKey => $player)
                     <tr>
+                    <td>{{ $indexKey + 1 }}</td>
                     @for ($i = 0; $i < sizeOf($player); $i++)
                         @if ($i < 17 || $i == 20)
-                            <td>{{ $player[$i] }}</td>
+                            <td nowrap>{{ $player[$i] }}</td>
                         @endif 
                     @endfor
                     </tr>
@@ -41,7 +43,7 @@
 
     @if (isset($myTotals))
         <tr>
-            <td class="text-right">Totals:</td>
+            <td class="text-right" colspan="2">Totals:</td>
             <td></td>
             <td>{{ $myTotals['GAMES'] }}</td>
             <td>{{ $myTotals['MPG'] }}</td>
@@ -111,7 +113,7 @@
 
     @if (isset($opponentTotals))
         <tr>
-            <td class="text-right">Totals:</td>
+            <td class="text-right" colspan="2">Totals:</td>
             <td></td>
             <td>{{ $opponentTotals['GAMES'] }}</td>
             <td>{{ $opponentTotals['MPG'] }}</td>
@@ -188,6 +190,7 @@
     @if (isset($opponentTeam))
             <tr><td></td></tr>
             <thead>
+                <th></th>
                 <th>Player</th>
                 <th>Team</th>
                 <th>Games</th>
@@ -208,11 +211,12 @@
                 <th>Rating</th>
             </thead>
             <tbody>
-                @foreach ($opponentTeam as $player)
+                @foreach ($opponentTeam as $indexKey => $player)
                     <tr>
+                    <td>{{ $indexKey + 1 }}</td>
                     @for ($i = 0; $i < sizeOf($player); $i++)
                         @if ($i < 17 || $i == 20)
-                            <td>{{ $player[$i] }}</td>
+                            <td nowrap>{{ $player[$i] }}</td>
                         @endif 
 
                     @endfor

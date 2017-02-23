@@ -67,6 +67,14 @@ Toggle fullscreen on current app.
 
 Refresh a webpage.
 
+`Command + Shift + R`
+
+Clear cache and refresh webpage.
+
+`Command + Option + I`
+
+Open / close Developer Tools in Chrome.
+
 `Command + Shift + 4`
 
 Allows you to take a snippet screenshot.  Saves to the desktop.

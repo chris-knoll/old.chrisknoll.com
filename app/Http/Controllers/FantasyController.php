@@ -12,13 +12,14 @@ class FantasyController extends Controller
         $teamGames = $this->parseTeamGames($request->input('games'));
         $myAverages = preg_split('/[^\\S ]+/', $request->input('my-team-stats'));
         $opponentAverages = preg_split('/[^\\S ]+/', $request->input('opponent-team-stats'));
-        //print_r($stats);
+
+        $statWeights = $this->getStatWeight($request);
 
         $myTeam = null;
         $myTotals = null;
         if (isset($myAverages[1]))
         {
-            $myTeam = $this->parseTeamPlayers($myAverages, $teamGames);
+            $myTeam = $this->parseTeamPlayers($myAverages, $teamGames, $statWeights);
             usort($myTeam, function (array $a, array $b) { return $b[20] - $a[20]; });
             $myTotals = $this->calculateTeamStats($myTeam);
         }
@@ -27,7 +28,7 @@ class FantasyController extends Controller
         $opponentTotals = null;
         if (isset($opponentAverages[1]))
         {
-            $opponentTeam = $this->parseTeamPlayers($opponentAverages, $teamGames);
+            $opponentTeam = $this->parseTeamPlayers($opponentAverages, $teamGames, $statWeights);
             usort($opponentTeam, function (array $a, array $b) { return $b[20] - $a[20]; });
             $opponentTotals = $this->calculateTeamStats($opponentTeam);
         }
@@ -40,7 +41,22 @@ class FantasyController extends Controller
         ]);
     }
 
-    public function parseTeamPlayers($stats, $teamGames)
+    public function getStatWeight($request) 
+    {
+        $statWeights = array(
+            '3PM' => $request->input('weight3PM'),
+            'REB' => $request->input('weightREB'),
+            'AST' => $request->input('weightAST'),
+            'STL' => $request->input('weightSTL'),
+            'BLK' => $request->input('weightBLK'),
+            'TO'  => $request->input('weightTO'),
+            'PTS' => $request->input('weightPTS')
+        );
+
+        return $statWeights;
+    }
+
+    public function parseTeamPlayers($stats, $teamGames, $statWeights)
     {
         $currentPlayer = array();
         $teamPlayers = array();
@@ -114,7 +130,7 @@ class FantasyController extends Controller
 
                 if(array_key_exists($currentPlayer[1], $teamGames))
                 {
-                    $currentPlayer = $this->calculateWeeklyRating($currentPlayer);
+                    $currentPlayer = $this->calculateWeeklyRating($currentPlayer, $statWeights);
                     array_push($teamPlayers, $currentPlayer);
                 }
                 $currentPlayer = array();
@@ -130,20 +146,19 @@ class FantasyController extends Controller
         return $teamPlayers;
     }
 
-    public function calculateWeeklyRating($player)
+    public function calculateWeeklyRating($player, $statWeights)
     {
         $rating = 
-            ($player[10] * 11.96) +  // 3PM
-            ($player[11] * 2.68) +   // REB
-            ($player[12] * 4.73) +   // AST
-            ($player[13] * 15.36) +  // STL
-            ($player[14] * 24.33)    // BLK
-            - ($player[15] * 8.14) + // TO
-            ($player[16]);           // PTS
+            ($player[10] * 11.96 * $statWeights['3PM']) +  // 3PM
+            ($player[11] * 2.68 * $statWeights['REB']) + // REB
+            ($player[12] * 4.73 * $statWeights['AST']) +   // AST
+            ($player[13] * 15.36 * $statWeights['STL']) +  // STL
+            ($player[14] * 24.33 * $statWeights['BLK'])    // BLK
+            - ($player[15] * 8.14 * $statWeights['TO']) + // TO
+            ($player[16] * $statWeights['PTS']);           // PTS
 
         array_push($player, round($rating));
         return $player;
-        
     }
 
     public function isPosition($string)
