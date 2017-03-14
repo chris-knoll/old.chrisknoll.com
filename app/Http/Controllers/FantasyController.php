@@ -63,12 +63,8 @@ class FantasyController extends Controller
 
         foreach ($stats as $stat)
         {
-            if (ctype_upper($stat))
-            {
-                // do nothing
-            }
             // Ignore positions and Free Agent status (FA / WA)
-            else if ($this->isPosition($stat) ||
+            if ($this->isPosition($stat) ||
                 substr($stat, 0, 2) === 'FA' ||
                 substr($stat, 0, 2) === 'WA') 
             {
@@ -127,7 +123,6 @@ class FantasyController extends Controller
 
             if (sizeOf($currentPlayer) == 20)
             {
-
                 if(array_key_exists($currentPlayer[1], $teamGames))
                 {
                     $currentPlayer = $this->calculateWeeklyRating($currentPlayer, $statWeights);
@@ -223,7 +218,7 @@ class FantasyController extends Controller
             'SAC' => $rawGames[25],
             'SA' => $rawGames[26],
             'TOR' => $rawGames[27],
-            'UTA' => $rawGames[28],
+            'UTAH' => $rawGames[28],
             'WSH' => $rawGames[29]
         );
 
