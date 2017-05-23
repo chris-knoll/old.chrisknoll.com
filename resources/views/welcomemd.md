@@ -9,6 +9,7 @@ I am currently looking for an internship or full-time position in software devel
 ### Strengths:
 
 - Java (OOP, Eclipse)
+- JavaScript
 - PHP (Laravel)
 - Relational Databases (MySQL)
 - Bootstrap
@@ -17,8 +18,8 @@ I am currently looking for an internship or full-time position in software devel
 ### Tech I want to study more:
 
 - Spring
-- C#, .net
-- JavaScript & JS Frameworks (Angular / Angular 2, Node.js)
+- MEAN Stack
+- JS Frameworks (Angular / Angular 2, Node.js, React)
 
 ### More!
 
